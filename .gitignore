@@ -1,2 +1,4 @@
 slurm*.out
 output.txt
+.RData
+.Rhistory
