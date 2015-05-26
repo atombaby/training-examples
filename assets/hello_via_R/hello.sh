@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#SBATCH --ntasks=1
-#SBATCH --time=00:10:00
 PROGDIR=$(dirname ${0})
-sbatch $PROGDIR/hello.sh
+SLURM_ARGS="--output=${PROGDIR}/output.txt --time=10:00 --ntasks=1"
+sbatch ${SLURM_ARGS} --wrap="${PROGDIR}/hello_envs.R"
